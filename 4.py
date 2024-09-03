@@ -10,7 +10,7 @@ import tkinter as tk
 
 # 创建一个Tkinter窗口
 root = tk.Tk()
-root.title("旗舰收种花挂机状态")
+root.title("旗舰流光易趣郁金香秒收")
 root.geometry("280x60")  # 设置窗口大小
 root.wm_attributes("-topmost", True)  # 设置窗口始终置顶
 root.wm_attributes("-alpha", 0.5)  # 设置窗口透明度
@@ -154,7 +154,7 @@ def click_image_in_window(window_title_pattern, image_path, timeout=5, button='l
 
 
 # 主流程
-for i in range(99):
+for i in range(33):
     # 激活窗口
     activate_jx3_window()
 
@@ -165,7 +165,7 @@ for i in range(99):
     click_image_in_window('剑网3.*', 'images/plbz.png', timeout=5)
 
     # 随机等待600-630秒
-    wait_time = random.randint(600, 630)
+    wait_time = random.randint(50, 10)
     print(f"正在随机等待{wait_time}秒")
     update_status(f"正在随机等待{wait_time}秒")
     for j in range(wait_time):
