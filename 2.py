@@ -10,8 +10,8 @@ import tkinter as tk
 
 # 创建一个Tkinter窗口
 root = tk.Tk()
-root.title("艺人挂机状态")
-root.geometry("300x200")  # 设置窗口大小
+root.title("旗舰艺人收种花挂机状态")
+root.geometry("280x60")  # 设置窗口大小
 root.wm_attributes("-topmost", True)  # 设置窗口始终置顶
 root.wm_attributes("-alpha", 0.5)  # 设置窗口透明度
 root.configure(bg='white')  # 设置背景颜色
@@ -154,7 +154,7 @@ def click_image_in_window(window_title_pattern, image_path, timeout=5):
 
 
 # 主流程
-for i in range(37):
+for i in range(99):
     # 激活窗口
     activate_jx3_window()
 
@@ -162,7 +162,7 @@ for i in range(37):
     click_image_in_window('剑网3.*', 'images/yrkq.png', timeout=5)
 
     # 随机等待600-630秒
-    wait_time = random.randint(6, 10)
+    wait_time = random.randint(600, 630)
     print(f"正在随机等待{wait_time}秒")
     update_status(f"正在随机等待{wait_time}秒")
     for j in range(wait_time):
@@ -173,8 +173,8 @@ for i in range(37):
     click_image_in_window('剑网3.*', 'images/yrgb.png', timeout=5)
 
     # 打印日志
-    print(f'艺人挂机工作中当前循环次数：{i}')
-    update_status(f'艺人挂机工作中当前循环次数：{i}')
+    print(f'旗舰艺人收种花工作中当前循环次数：{i}')
+    update_status(f'旗舰艺人收种花工作中当前循环次数：{i}')
 
     # 等待5秒后再进行下一次循环
     print("等待5秒后再进行下一次循环")
@@ -182,9 +182,9 @@ for i in range(37):
     time.sleep(5)
 
 # 运行或打开
-pyautogui.hotkey('win', 'r')
-pyautogui.typewrite('shutdown -s -t 60')
-pyautogui.press('enter')
+#pyautogui.hotkey('win', 'r')
+#pyautogui.typewrite('shutdown -s -t 60')
+#pyautogui.press('enter')
 
 # 进入事件循环
 root.mainloop()

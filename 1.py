@@ -10,8 +10,8 @@ import tkinter as tk
 
 # 创建一个Tkinter窗口
 root = tk.Tk()
-root.title("艺人挂机状态")
-root.geometry("300x200")  # 设置窗口大小
+root.title("通用艺人挂机状态")
+root.geometry("280x60")  # 设置窗口大小
 root.wm_attributes("-topmost", True)  # 设置窗口始终置顶
 root.wm_attributes("-alpha", 0.5)  # 设置窗口透明度
 root.configure(bg='white')  # 设置背景颜色
@@ -154,7 +154,7 @@ def click_image_in_window(window_title_pattern, image_path, timeout=5, button='l
 
 
 # 主流程
-for i in range(37):
+for i in range(99):
     # 激活窗口
     activate_jx3_window()
 
@@ -192,7 +192,7 @@ for i in range(37):
 
     # 打印日志
     print(f'艺人挂机工作中当前循环次数：{i}')
-    update_status(f'艺人挂机工作中当前循环次数：{i}')
+    update_status(f'通用艺人挂机工作中当前循环次数：{i}')
 
     # 等待5秒后再进行下一次循环
     print("等待5秒后再进行下一次循环")
@@ -200,9 +200,9 @@ for i in range(37):
     time.sleep(5)
 
 # 运行或打开
-pyautogui.hotkey('win', 'r')
-pyautogui.typewrite('shutdown -s -t 60')
-pyautogui.press('enter')
+#pyautogui.hotkey('win', 'r')
+#pyautogui.typewrite('shutdown -s -t 60')
+#pyautogui.press('enter')
 
 # 进入事件循环
 root.mainloop()
