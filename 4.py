@@ -165,7 +165,7 @@ for i in range(33):
     click_image_in_window('剑网3.*', 'images/plbz.png', timeout=5)
 
     # 随机等待600-630秒
-    wait_time = random.randint(50, 10)
+    wait_time = random.randint(5, 10)
     print(f"正在随机等待{wait_time}秒")
     update_status(f"正在随机等待{wait_time}秒")
     for j in range(wait_time):
