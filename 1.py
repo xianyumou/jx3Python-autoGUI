@@ -119,7 +119,7 @@ def click_image_in_window(window_title_pattern, image_path, timeout=5, button='l
         time.sleep(0.5)
 
         # 点击匹配到的位置
-        pyautogui.click(click_x, click_y, button='left')  # 明确指定左键点击
+        pyautogui.click(click_x, click_y, button=button)  # 使用传入的 button 参数
         print(f"点击了图像 '{image_path}'")
         update_status(f"点击了图像 '{image_path}'")
         found_match = True  # 标记找到了匹配项

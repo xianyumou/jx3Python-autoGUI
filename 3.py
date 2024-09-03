@@ -10,7 +10,7 @@ import tkinter as tk
 
 # 创建一个Tkinter窗口
 root = tk.Tk()
-root.title("旗舰收种花挂机状态")
+root.title("旗舰收花种花状态")
 root.geometry("280x60")  # 设置窗口大小
 root.wm_attributes("-topmost", True)  # 设置窗口始终置顶
 root.wm_attributes("-alpha", 0.5)  # 设置窗口透明度
@@ -20,17 +20,14 @@ root.configure(bg='white')  # 设置背景颜色
 status_label = tk.Label(root, text="", bg='white')
 status_label.pack(pady=10)
 
-
 # 更新状态函数
 def update_status(text):
     status_label.config(text=text)
     root.update()
 
-
 # 设置等待时间
 pyautogui.PAUSE = 1
 pyautogui.FAILSAFE = True
-
 
 # 定义函数，用于激活包含“剑网3”的窗口
 def activate_jx3_window():
@@ -48,7 +45,6 @@ def activate_jx3_window():
     else:
         print("未找到与模式匹配的窗口")
         update_status("未找到与模式匹配的窗口")
-
 
 # 定义函数，用于查找和点击指定的图像
 def click_image_in_window(window_title_pattern, image_path, timeout=5, button='left'):
@@ -119,7 +115,7 @@ def click_image_in_window(window_title_pattern, image_path, timeout=5, button='l
         time.sleep(0.5)
 
         # 点击匹配到的位置
-        pyautogui.click(click_x, click_y, button='left')  # 明确指定左键点击
+        pyautogui.click(click_x, click_y, button=button)  # 使用传入的 button 参数
         print(f"点击了图像 '{image_path}'")
         update_status(f"点击了图像 '{image_path}'")
         found_match = True  # 标记找到了匹配项
@@ -152,7 +148,6 @@ def click_image_in_window(window_title_pattern, image_path, timeout=5, button='l
     print(f"完成搜索图像: {image_path}")
     update_status(f"完成搜索图像: {image_path}")
 
-
 # 主流程
 for i in range(99):
     # 激活窗口
@@ -162,9 +157,9 @@ for i in range(99):
     click_image_in_window('剑网3.*', 'images/gdc.png', timeout=5, button='right')
 
     # 左键点击 plbz.png
-    click_image_in_window('剑网3.*', 'images/plbz.png', timeout=5)
+    click_image_in_window('剑网3.*', 'images/plbz.png', timeout=5, button='left')
 
-    # 随机等待600-630秒
+    # 随机等待5-10秒
     wait_time = random.randint(600, 630)
     print(f"正在随机等待{wait_time}秒")
     update_status(f"正在随机等待{wait_time}秒")
@@ -176,7 +171,7 @@ for i in range(99):
     click_image_in_window('剑网3.*', 'images/gdc.png', timeout=5, button='right')
 
     # 左键点击 plsh.png
-    click_image_in_window('剑网3.*', 'images/plsh.png', timeout=5)
+    click_image_in_window('剑网3.*', 'images/plsh.png', timeout=5, button='left')
 
     # 添加2-3秒的随机延迟
     random_delay = random.uniform(2, 3)
@@ -192,11 +187,6 @@ for i in range(99):
     print("等待5秒后再进行下一次循环")
     update_status("等待5秒后再进行下一次循环")
     time.sleep(5)
-
-# 运行或打开
-#pyautogui.hotkey('win', 'r')
-#pyautogui.typewrite('shutdown -s -t 60')
-#pyautogui.press('enter')
 
 # 进入事件循环
 root.mainloop()
