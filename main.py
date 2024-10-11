@@ -1,18 +1,41 @@
 import sys
-import io
 import signal
+import time
 from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton, QVBoxLayout, QHBoxLayout, QWidget, QTextEdit, QLineEdit, QLabel, QScrollArea, QMessageBox
-from PyQt6.QtCore import Qt, QThread, pyqtSignal
-import subprocess
+from PyQt6.QtCore import Qt, QThread, pyqtSignal, QEventLoop, QTimer
 import logging
 import configparser
+import subprocess
+import ctypes  # 新增导入
 
-# 设置标准输出流的编码
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
-sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')
+# 检查是否以管理员权限运行
+def is_admin():
+    try:
+        return ctypes.windll.shell32.IsUserAnAdmin()
+    except:
+        return False
+
+# 尝试以管理员权限重新启动程序
+def run_as_admin():
+    try:
+        ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, " ".join(sys.argv), None, 1)
+    except Exception as e:
+        logging.error(f"Failed to restart as admin: {e}")
+
+# 如果没有以管理员权限运行，则提示用户并尝试重启
+if not is_admin():
+    QMessageBox.critical(None, "管理员权限", "请以管理员身份运行此程序。")
+    run_as_admin()
+    sys.exit(1)
 
 # 配置日志
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s', encoding='utf-8')
+
+# 导入自动化模块
+from jx3_automation import perform_automation
+from jx3_automation1 import perform_automation as perform_automation1
+from jx3_automation2 import perform_automation as perform_automation2
+from jx3_automation3 import perform_automation as perform_automation3
 
 class ScriptRunner(QMainWindow):
     def __init__(self):
@@ -63,11 +86,16 @@ class ScriptRunner(QMainWindow):
             "旗舰端艺人和种花",
             "通用艺人挂机",
             "旗舰种花",
-            "无界种花"
+            "无界种花",
         ]
 
         # 脚本名称列表
-        self.script_names = ["1.py", "2.py", "3.py", "4.py"]
+        self.script_names = [
+            "jx3_automation.perform_automation",
+            "jx3_automation1.perform_automation",
+            "jx3_automation2.perform_automation",
+            "jx3_automation3.perform_automation"
+        ]
 
         # 添加脚本选择按钮
         for index, name in enumerate(self.button_names):
@@ -122,6 +150,7 @@ class ScriptRunner(QMainWindow):
             QMessageBox.critical(self, "Error", "无效的设置格式。请检查输入。")
             return
 
+        # 始终传递所有必需的参数
         self.thread = ScriptExecutionThread(script_name, self.text_edit, min_delay, max_delay, timeout_value)
         self.thread.output_signal.connect(self.update_text_edit)
         self.thread.finished.connect(self.on_thread_finished)
@@ -130,7 +159,6 @@ class ScriptRunner(QMainWindow):
     def stop_script(self):
         if hasattr(self, 'thread') and self.thread.isRunning():
             self.thread.stop()
-            self.thread.wait()
             self.text_edit.append("脚本已停止。")
 
     def on_thread_finished(self):
@@ -152,34 +180,55 @@ class ScriptExecutionThread(QThread):
         self.timeout = timeout
         self.running = True
         self.process = None
+        self.stop_event = QEventLoop()
 
     def run(self):
         try:
-            logging.debug(f"Running script {self.script_name} with delay range {self.min_delay}-{self.max_delay} and timeout {self.timeout}")
-            self.process = subprocess.Popen(
-                ['python', self.script_name, str(self.min_delay), str(self.max_delay), str(self.timeout)],
-                stdout=subprocess.PIPE,
-                stderr=subprocess.STDOUT,
-                text=True,
-                encoding='utf-8',
-                errors='replace'
-            )
-            while self.running and self.process.poll() is None:
-                line = self.process.stdout.readline()
-                if line:
-                    logging.debug(f"Script output: {line.strip()}")
-                    self.output_signal.emit(line.strip())
-            self.process.stdout.close()
-            self.process.wait()
+            # 映射脚本名称和对应的自动化函数
+            script_functions = {
+                "jx3_automation.perform_automation": perform_automation,
+                "jx3_automation1.perform_automation": perform_automation1,
+                "jx3_automation2.perform_automation": perform_automation2,
+                "jx3_automation3.perform_automation": perform_automation3
+            }
+
+            if self.script_name in script_functions:
+                logging.debug(f"Running script {self.script_name} with delay range {self.min_delay}-{self.max_delay} and timeout {self.timeout}")
+                automation_function = script_functions[self.script_name]
+                automation_function(output_callback=self.output_signal.emit, stop_event=self)  # 使用回调函数和停止事件
+            else:
+                logging.debug(f"Running script {self.script_name} with delay range {self.min_delay}-{self.max_delay} and timeout {self.timeout}")
+                self.process = subprocess.Popen(
+                    ['python', self.script_name, str(self.min_delay), str(self.max_delay), str(self.timeout)],
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.STDOUT,
+                    text=True,
+                    encoding='utf-8',
+                    errors='replace'
+                )
+                while self.running and self.process.poll() is None:
+                    line = self.process.stdout.readline()
+                    if line:
+                        logging.debug(f"Script output: {line.strip()}")
+                        self.output_signal.emit(line.strip())
+                self.process.stdout.close()
+                self.process.wait()
         except Exception as e:
             logging.error(str(e))
             self.output_signal.emit(f"Error: {str(e)}")
 
     def stop(self):
         self.running = False
+        self.stop_event.quit()
         if self.process and self.process.poll() is None:
             self.process.terminate()
-            self.process.wait()
+            try:
+                self.process.wait(2)  # 等待2秒让进程有机会正常关闭
+            except subprocess.TimeoutExpired:
+                self.process.kill()  # 如果2秒后进程仍未关闭，则强制杀死进程
+
+    def is_set(self):
+        return not self.running
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

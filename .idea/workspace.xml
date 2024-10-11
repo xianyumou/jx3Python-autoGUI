@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5f290289-f566-4877-b8a2-f4d01dd70eb7" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/beta测试版本注意事项.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jx3Python-autoGUI.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jx3Python-autoGUI.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2.py" beforeDir="false" afterPath="$PROJECT_DIR$/2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/config.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/4.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/config.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/images/gb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/images/gdc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/images/plbz.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/images/plsh.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/images/yjbz.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/images/yjsh.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/images/yrgb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/images/yrkq.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/剑网三Auto.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/剑网三Auto2024.10.6.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/说明书.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/gdc.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/gdc.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/plbz.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/plbz.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/plsh.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/plsh.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/yrgb.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/yrgb.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/yrkq.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/yrkq.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;xianyumou&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/xianyumou/jx3Python-autoGUI.git&quot;,
+    &quot;accountId&quot;: &quot;d39fa394-3ee5-4ffa-9140-2db2aca33d9c&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2nIQ4GqILBSYwAvXYDnk39PD206" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.1.executor": "Run",
+    "Python.cc1.executor": "Run",
+    "Python.jx3_automation.executor": "Run",
+    "Python.main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/14794/PycharmProjects/jx3Python-autoGUI",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="jx3Python-autoGUI" is-module-sdk="true">
+        <option name="myUseModuleSdk" value="true" />
+        <option name="myModuleName" value="jx3Python-autoGUI" />
+      </console-settings>
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\14794\PycharmProjects\jx3Python-autoGUI" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-PY-242.23339.19" />
+        <option value="bundled-python-sdk-0029f7779945-399fe30bd8c1-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.23339.19" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="5f290289-f566-4877-b8a2-f4d01dd70eb7" name="更改" comment="" />
+      <created>1728657916855</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1728657916855</updated>
+      <workItem from="1728657918371" duration="1119000" />
+      <workItem from="1728703169446" duration="1928000" />
+      <workItem from="1728726149157" duration="245000" />
+      <workItem from="1728726413595" duration="5671000" />
+      <workItem from="1729087463592" duration="31000" />
+      <workItem from="1729593327629" duration="1064000" />
+      <workItem from="1729594411933" duration="2615000" />
+      <workItem from="1729597162268" duration="1767000" />
+      <workItem from="1729598954999" duration="1423000" />
+      <workItem from="1729675732362" duration="7725000" />
+      <workItem from="1729687780382" duration="1562000" />
+      <workItem from="1730028043395" duration="129000" />
+      <workItem from="1730028184257" duration="898000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/jx3Python_autoGUI$main.coverage" NAME="main 覆盖结果" MODIFIED="1730028786595" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/main_py$jx3_automation.coverage" NAME="jx3_automation 覆盖结果" MODIFIED="1729595026917" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/jx3Python_autoGUI$cc1.coverage" NAME="cc1 覆盖结果" MODIFIED="1729599496210" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/main_py$1.coverage" NAME="1 覆盖结果" MODIFIED="1728735838851" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/main_py$cc1.coverage" NAME="cc1 覆盖结果" MODIFIED="1729597147556" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/main_py$main.coverage" NAME="main 覆盖结果" MODIFIED="1728735886245" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>
